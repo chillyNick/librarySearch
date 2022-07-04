@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_PORT: 3306
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: docker
+      MYSQL_DATABASE: library
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./scripts/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql

@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package api;
+
+option go_package="github.com/chillyNick/librarySearch/pkg/api";
+
+message Book {
+  string title = 1;
+}
+
+message Author {
+  string name = 1;
+}
+
+message Books {
+  repeated Book books = 1;
+}
+
+message Authors {
+  repeated Author authors = 1;
+}
+
+service LibraryService {
+  rpc GetBooks(Author) returns (Books) {}
+  rpc GetAuthors(Book) returns (Authors) {}
+}

@@ -1,0 +1,16 @@
+grpc:
+  host: localhost
+  port: 8082
+  maxConnectionIdle: 5 # Minutes
+  timeout: 15 # Seconds
+  maxConnectionAge: 5 # Minutes
+
+database:
+  host: localhost
+  port: 3306
+  user: docker
+  password: docker
+  name: library
+  connMaxLifetime: 60 #secounds
+  maxOpenConns: 5
+  maxIdleConns: 5
